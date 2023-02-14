@@ -1,0 +1,282 @@
+.banner{
+  background-image: url(/assets/images/bg_home.jpg);
+  height: 100vh;
+  max-width: 100%;
+  background-size:cover; //點點點點點點點點點點點點點點點點點點點點點
+}
+
+.top-left-dot{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.top-right-dot{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.bottom-left-dot{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.bottom-right-dot{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+
+
+.revervation-border{
+  border:1px solid #FFFFFF;
+  border-radius:12px;
+}
+
+
+.revervation-number{
+  position: absolute;
+  top: 0px;
+  left : 70px; //右邊上面都設0，則出現在右上方
+}
+
+.revervation-number-bg{
+  background: #000;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.first-title-card{
+  max-width: 650px;
+  height: 269px;
+  background-color: $dark2;
+  border: 1px solid white;
+  flex-direction: column;
+}
+
+.text-gradient{
+  background: linear-gradient(180deg, #09ACF5, #62DB54);
+  background-clip: text;
+  color: transparent;
+}
+
+.learn-card{
+  border-radius: 12px;
+  border:1px solid white;
+  &:hover{
+      border-radius: 12px;
+      border:1px solid $primary;
+      color: $primary;
+    }
+}
+
+.learn-icon{
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    font-size: 48px;
+  }
+
+.avator{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.avator-card{
+  background-color: $dark2;
+  max-width: 306px;
+  border-radius: 16px;
+  height: 507px;
+}
+
+
+.btn-gradient{
+  background: linear-gradient(180deg, #09ACF5, #62DB54);
+  width: 172px;;
+}
+
+
+.info-1{
+  height: 615px;
+  background-image: url(/assets/images/info01.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
+}
+.info-2{
+  height: 615px;
+  background-image: url(/assets/images/info02.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
+}
+.info-3{
+  height: 615px;
+  background-image: url(/assets/images/info03.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
+}
+.info-4{
+  height: 615px;
+  background-image: url(/assets/images/info04.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.square-rounded{
+    width: 32px;
+    height: 32px;
+    display: none;
+    &-top-left{
+        border-top:2px solid $primary;
+        border-left:2px solid $primary;
+        border-top-left-radius: 10px;
+    }
+    &-top-right{
+        border-top:2px solid $primary;
+        border-right:2px solid $primary;
+        border-top-right-radius: 10px;
+    }
+    &-bottom-left{
+        border-bottom:2px solid $primary;
+        border-left:2px solid $primary;
+        border-bottom-left-radius: 10px;
+    }
+    &-bottom-right{
+        border-bottom:2px solid $primary;
+        border-right:2px solid $primary;
+        border-bottom-right-radius: 10px;
+    }
+}
+.card{
+    @include media-breakpoint-up(lg) { 
+        &:hover{
+            .square-rounded{
+                display: block;
+            }
+        }
+     } 
+}
+
+.share-inside-box{
+  max-width: 416px;
+}
+
+
+.share-bg-color{
+  background: #1C1C1C;
+}
+
+.no-border{
+  border-style:none;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-img{
+    height: 381px;
+    width: 525px;
+    margin-left: 10px;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &::after{
+        position: absolute;
+        content:"";
+        width: 100%;
+        height: 100%;
+        top: 10px;
+        left: -10px;
+        border-radius: 24px;
+        border:1px solid white;
+        z-index:-1;
+    }
+}
+
+.pagination{
+   position:absolute;
+   bottom:0;
+   left:30%;
+   transform: translateX(-50%);
+    z-index: 10;
+   //把原有的左右鍵隱藏
+  .swiper-button-prev,.swiper-button-next{
+    &:after{
+       content: '';
+    }
+    position:unset;
+    margin-top: 0;
+    color: #62DB54;
+  }
+  
+  .swiper-pagination{
+    position:unset;
+    width:auto;
+    .swiper-pagination-bullet {
+      background-color: #62DB54;
+      opacity: initial;
+      &-active {
+        width: 16px;
+        border-radius: 100px;
+      }
+    }
+  }
+  
+}
+
+
+.feedback{
+  width: 416px;
+  height: 262px;
+  border-top-right :1px solid #FFFFFF;
+  border-top-right-radius: 16px;
+  border-top-left :1px solid #FFFFFF;
+  border-top-left-radius: 16px;
+  border-bottom-right :1px solid #FFFFFF;
+  border-bottom-right-radius: 16px;
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
+
+.swiper-left-arrow{
+  width: 14px;
+  height: 10px;
+}
+
+.swiper-right-arrow{
+  width: 14px;
+  height: 10px;
+}
+
+.join-us-icon{
+  width: 100px;
+  font-size: 80px;
+}
