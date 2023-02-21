@@ -1,0 +1,16 @@
+.mr-1 {
+  margin-right: 16px; }
+
+.card-course-height {
+  height: 269px; }
+
+.btn-gradient-list {
+  background: -webkit-gradient(linear, left top, left bottom, from(#09ACF5), to(#62DB54));
+  background: -o-linear-gradient(top, #09ACF5, #62DB54);
+  background: linear-gradient(180deg, #09ACF5, #62DB54);
+  width: 168px; }
+
+.btn-light {
+  width: 168px; }
+
+/*# sourceMappingURL=course-list.css.map */

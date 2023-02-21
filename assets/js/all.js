@@ -20,6 +20,7 @@ var swiper = new Swiper(".course-swiper", {
   }
 });
 "use strict";
+"use strict";
 
 var swiper1 = new Swiper(".Swiper1", {
   autoplay: {
