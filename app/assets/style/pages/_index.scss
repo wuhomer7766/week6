@@ -1,3 +1,6 @@
+.mx-100{
+  max-width: 100%;
+}
 .banner{
   background-image: url(/assets/images/bg_home.jpg);
   height: 100vh;
@@ -95,7 +98,12 @@
 }
 
 
-.btn-gradient{
+
+
+
+
+.btn-gradient-index{
+  color: #FFFFFF;
   background: linear-gradient(180deg, #09ACF5, #62DB54);
   width: 172px;;
 }
@@ -140,6 +148,10 @@
   &:hover{
     opacity: 1;
   }
+}
+
+.pr-0{
+  padding-right: 0;
 }
 
 .square-rounded{
@@ -218,6 +230,8 @@
     }
 }
 
+
+
 .pagination{
    position:absolute;
    bottom:0;
@@ -266,17 +280,9 @@
   }
 }
 
-.swiper-left-arrow{
-  width: 14px;
-  height: 10px;
-}
 
-.swiper-right-arrow{
-  width: 14px;
-  height: 10px;
-}
 
 .join-us-icon{
-  width: 100px;
+  max-width: 100px;
   font-size: 80px;
 }
