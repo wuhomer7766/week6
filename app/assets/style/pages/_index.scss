@@ -54,7 +54,6 @@
 
 .first-title-card{
   max-width: 650px;
-  height: 269px;
   background-color: $dark2;
   border: 1px solid white;
   flex-direction: column;
@@ -90,13 +89,18 @@
   border-radius: 50%;
 }
 
-.avator-card{
-  background-color: $dark2;
-  max-width: 306px;
-  border-radius: 16px;
-  height: 507px;
+.avator-list{
+  display: flex;
+  justify-content: space-between;
 }
 
+.avator-card{
+  background-color: $dark2;
+  width: 23%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 16px;
+}
 
 
 
@@ -189,8 +193,17 @@
      } 
 }
 
-.share-inside-box{
-  max-width: 416px;
+.share-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.share-item{
+  width: 29.33333%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 
@@ -290,4 +303,63 @@
 .join-us-icon{
   max-width: 100px;
   font-size: 80px;
+}
+
+
+@media (max-width:1280px) {
+  .section2-h3{
+    font-size: 16px;
+  }
+  .section2-p{
+    font-size: 12px;
+  }
+  .section3-h3{
+    font-size: 22px;
+  }
+  .section5-title{
+    font-size: 20px;
+    }
+  .section5-p{
+    font-size: 14px; 
+  }
+
+}
+
+
+@media (max-width:960px) {
+  .avator-card{
+    width: 48%;
+  }
+  .share-list{
+    justify-content: center;
+  }
+  .share-item{
+    width: 50%;
+  }
+  .first-title-card{
+    max-width: 450px;
+    h2{
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .banner{
+    height: 220px;
+  }
+}
+
+
+
+@media (max-width:640px) {
+  .avator-card{
+    width: 98%;
+  }
+}
+
+@media (max-width:480px) {
+  .avator-card{
+    width: 98%;
+  }
 }
