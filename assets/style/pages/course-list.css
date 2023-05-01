@@ -1,8 +1,30 @@
-.mr-1 {
-  margin-right: 16px; }
+@media (max-width: 1280px) {
+  .course-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .category-item {
+    width: 31.3333%;
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 5px;
+    white-space: nowrap; } }
 
 .card-course-height {
-  height: 269px; }
+  max-height: 269px; }
+
+@media (max-width: 767px) {
+  .category-item {
+    display: none; }
+  .card-course-height {
+    margin-bottom: 380px; } }
+
+.mtmb {
+  margin-top: 90px;
+  margin-bottom: 50px; }
 
 .btn-gradient-list {
   background: -webkit-gradient(linear, left top, left bottom, from(#09ACF5), to(#62DB54));

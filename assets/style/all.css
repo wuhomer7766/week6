@@ -10641,7 +10641,6 @@ textarea.form-control-lg {
 
 .first-title-card {
   max-width: 650px;
-  height: 269px;
   background-color: #1C1C1C;
   border: 1px solid white;
   -webkit-box-orient: vertical;
@@ -10677,11 +10676,20 @@ textarea.form-control-lg {
   height: 100px;
   border-radius: 50%; }
 
+.avator-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .avator-card {
   background-color: #1C1C1C;
-  max-width: 306px;
-  border-radius: 16px;
-  height: 507px; }
+  width: 23%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 16px; }
 
 .btn-gradient-index {
   color: #FFFFFF;
@@ -10754,8 +10762,21 @@ textarea.form-control-lg {
   .card:hover .square-rounded {
     display: block; } }
 
-.share-inside-box {
-  max-width: 416px; }
+.share-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.share-item {
+  width: 29.33333%;
+  margin-left: 2%;
+  margin-right: 2%; }
 
 .share-bg-color {
   background: #1C1C1C; }
@@ -10833,11 +10854,71 @@ textarea.form-control-lg {
   max-width: 100px;
   font-size: 80px; }
 
-.mr-1 {
-  margin-right: 16px; }
+@media (max-width: 1280px) {
+  .section2-h3 {
+    font-size: 16px; }
+  .section2-p {
+    font-size: 12px; }
+  .section3-h3 {
+    font-size: 22px; }
+  .section5-title {
+    font-size: 20px; }
+  .section5-p {
+    font-size: 14px; } }
+
+@media (max-width: 960px) {
+  .avator-card {
+    width: 48%; }
+  .share-list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .share-item {
+    width: 50%; }
+  .first-title-card {
+    max-width: 450px; }
+    .first-title-card h2, .first-title-card .h2 {
+      font-size: 24px; } }
+
+@media (max-width: 768px) {
+  .banner {
+    height: 220px; } }
+
+@media (max-width: 640px) {
+  .avator-card {
+    width: 98%; } }
+
+@media (max-width: 480px) {
+  .avator-card {
+    width: 98%; } }
+
+@media (max-width: 1280px) {
+  .course-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .category-item {
+    width: 31.3333%;
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 5px;
+    white-space: nowrap; } }
 
 .card-course-height {
-  height: 269px; }
+  max-height: 269px; }
+
+@media (max-width: 767px) {
+  .category-item {
+    display: none; }
+  .card-course-height {
+    margin-bottom: 380px; } }
+
+.mtmb {
+  margin-top: 90px;
+  margin-bottom: 50px; }
 
 .btn-gradient-list {
   background: -webkit-gradient(linear, left top, left bottom, from(#09ACF5), to(#62DB54));

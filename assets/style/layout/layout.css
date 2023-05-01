@@ -1,2 +1,13 @@
+@media (max-width: 768px) {
+  .navbar-btn-item {
+    margin-right: 20px;
+    margin-left: 20px; } }
+
+@media (max-width: 390px) {
+  .navbar-btn-item {
+    margin-right: 50px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; } }
 
 /*# sourceMappingURL=layout.css.map */

@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"layout.css","sourcesContent":[]}
+{"version":3,"sources":["layout/layout.scss"],"names":[],"mappings":"AAEA;EACE;IACE,kBAAkB;IAClB,iBAAiB,EAAA,EAClB;;AAGH;EACE;IACE,kBAAkB;IAClB,wBAAuB;QAAvB,qBAAuB;YAAvB,uBAAuB,EAAA,EACxB","file":"layout.css","sourcesContent":["\r\n\r\n@media (max-width:768px) {\r\n  .navbar-btn-item{\r\n    margin-right: 20px;\r\n    margin-left: 20px;\r\n  }\r\n}\r\n\r\n@media (max-width:390px) {\r\n  .navbar-btn-item{\r\n    margin-right: 50px;\r\n    justify-content: center;\r\n  }\r\n}\r\n"]}
