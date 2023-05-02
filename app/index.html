@@ -1,10 +1,51 @@
----
-title: Coding Home 程式家教
-layout: ./app/layout.ejs
-engine: ejs
-current: index
----
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    SpaceLoves 愛太空
+  </title>
+  <link rel="shortcut icon" href="assets/images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/layout/layout.scss">
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container py-2">
+    <div>
+      <a class="navbar-brand" href="./index.html">
+        <img src="/assets/images/coding home-re.png" alt="" width="174" height="42">
+      </a>
+    </div>
+    <ul class="navbar-btn-list list-unstyled ms-auto my-2 my-lg-0 mb-lg-0 d-flex">
+      <li class="navbar-btn-item mx-3">
+        <a href="index.html" class="text-white text-decoration-none me-lg-6 p-md-1">首頁</a>
+      </li>
+      <li class="navbar-btn-item mx-4">
+        <a href="./findPhoto.html" class="text-white text-decoration-none me-lg-6 p-md-1">太空圖片庫</a>
+      </li>
+      <li class="navbar-btn-item">
+        <a href="./planetIntro.html" class="text-white text-decoration-none me-lg-6 p-md-1">行星介紹</a>
+      </li>
+      <li class="navbar-btn-item">
+        <a href="./feedBack.html" class="text-white text-decoration-none me-lg-6 p-md-1">提供建議</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -17,8 +58,8 @@ current: index
       <div class="position-absolute top-0 start-100 translate-middle white-block top-right-dot"></div>
       <div class="position-absolute top-100 start-0 translate-middle white-block bottom-left-dot"></div>
       <div class="position-absolute top-100 start-100 translate-middle white-block bottom-right-dot"></div>
-      <h2 class="mb-4 fs-3 fs-md-2 fs-lg-1 fw-bold"><span class="text-gradient">全台最豐富的程式家教</span><br>在實踐中化理想為現實</h2>
-      <p class="mb-0 fs-7 fs-lg-5 fw-bold">全台最專業師資｜到府程式家教｜客製化課程</p>
+      <h2 class="mb-4 fs-3 fs-md-2 fs-lg-1 fw-bold"><span class="text-gradient">豐富的太空圖片及影片</span><br>滿足你對於太空的熱愛</h2>
+      <p class="mb-0 fs-7 fs-lg-5 fw-bold">NASA衛星照片｜各大行星介紹｜馬上加入你的最愛</p>
     </div>
   </div>
 </section>
@@ -32,16 +73,16 @@ current: index
     <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-4 list-unstyled align-items-center ">
       <li class="col ">
         <div class="justify-content-center justify-content-md-start align-items-center">
-          <h2 class="fw-bold position-relative service-deco text-center text-md-start">手把手帶你<br>親自到家教到會</h2>
+          <h2 class="fw-bold position-relative service-deco text-center text-md-start">串接NASA API<br>想看什麼都可以 !</h2>
         </div>
       </li>
       <li class="col">
         <div class="card text-center px-4 py-6 learn-card h-100 bg-dark">
-          <span class="material-symbols-outlined learn-icon mb-4 fw-bold">
-            code
-          </span>
-          <h3 class="card-title fw-bold h5 mb-3 section2-h3">超過 100 種專業課程</h3>
-          <p class="card-text section2-p">學習標準化的電腦形式語言<br>培養運算思維和邏輯素養</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill material-symbols-outlined learn-icon mb-4 fw-bold" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <h3 class="card-title fw-bold h5 mb-3 section2-h3">NASA圖片庫</h3>
+          <p class="card-text section2-p">API請求無上限<br>所有高清太空圖片都在這</p>
         </div>
       </li>
       <li class="col">
@@ -49,17 +90,18 @@ current: index
           <span class="material-symbols-outlined mb-4 learn-icon">
             rocket_launch
           </span>
-          <h3 class="card-title fw-bold h5 mb-3 section2-h3">高效學習</h3>
-          <p class="card-text section2-p">客製化專屬課表<br>讓學習變簡單</p>
+          <h3 class="card-title fw-bold h5 mb-3 section2-h3">超過 5000 張高清照片</h3>
+          <p class="card-text section2-p">從小行星看到超星系團<br>準備好在家探索宇宙了嗎</p>
         </div>
       </li>
       <li class="col">
         <div class="card text-center px-4 py-6 learn-card h-100 bg-dark">
-          <span class="material-symbols-outlined mb-4 learn-icon">
-            location_on
-          </span>
-          <h3 class="card-title fw-bold h5 mb-3 section2-h3">指定地點</h3>
-          <p class="card-text section2-p">專業老師到你指定的地點<br>一對一高效學習</p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill material-symbols-outlined learn-icon mb-4 fw-bold" viewBox="0 0 16 16">
+          <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+          </svg>
+          <h3 class="card-title fw-bold h5 mb-3 section2-h3">尋找你喜歡的圖片</h3>
+          <p class="card-text section2-p">想換桌布了嗎?<br>快去我們的圖庫找找看吧 !</p>
         </div>
       </li>
     </ul>
@@ -74,35 +116,35 @@ current: index
 <section class="bg-dark2 ">
   <div class="container py-6 py-md-max">
     <h2 class="text-center mb-lg position-relative">
-      預約
+      本站導覽
     </h2>
     <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-6 list-unstyled">
       <li class="col" data-aos="fade-up" data-aos-delay="50">
         <div class="position-relative p-6 border border-white rounded-1 h-100">
           <span class="revervation-number translate-middle text-primary fw-bold fs-1 number-icon font-monospace revervation-number-bg">01</span>
-          <h3 class="fw-bold mb-3 section3-h3">預約</h3>
-          <p class="mb-0 section3-p">線上預約指定課程與老師<br>由老師安排專屬課程</p>
+          <h3 class="fw-bold mb-3 section3-h3">太空圖片庫</h3>
+          <p class="mb-0 section3-p">尋找你感興趣的星星<br>我們幫你找到它</p>
         </div>
       </li>
       <li class="col" data-aos="fade-up" data-aos-delay="100">
         <div class="position-relative p-6 border border-white rounded-1 h-100">
           <span class="revervation-number translate-middle text-primary fw-bold fs-1 number-icon font-monospace revervation-number-bg">02</span>
-          <h3 class="fw-bold mb-3 section3-h3">付款</h3>
-          <p class="mb-0 ">支援各種支付方式<br>提供12期分期付款</p>
+          <h3 class="fw-bold mb-3 section3-h3">行星導覽</h3>
+          <p class="mb-0 ">想多了解地球的好鄰居們嗎<br>為你附上介紹影片和行星資訊!</p>
         </div>
       </li>
       <li class="col" data-aos="fade-up" data-aos-delay="150">
         <div class="position-relative p-6 border border-white rounded-1 h-100">
           <span class="revervation-number translate-middle text-primary fw-bold fs-1 number-icon font-monospace revervation-number-bg">03</span>
-          <h3 class="fw-bold mb-3 section3-h3">上課</h3>
-          <p class="mb-0">地點由您指定<br>密集性一對一教學</p>
+          <h3 class="fw-bold mb-3 section3-h3">提供我們建議</h3>
+          <p class="mb-0">我們重視您的使用體驗<br>歡迎對我們提出任何建議</p>
         </div>
       </li>
       <li class="col" data-aos="fade-up" data-aos-delay="200">
         <div class="position-relative p-6 border border-white rounded-1 h-100">
           <span class="revervation-number translate-middle text-primary fw-bold fs-1 number-icon font-monospace revervation-number-bg">04</span>
-          <h3 class="fw-bold mb-3 section3-h3">提供滿意度</h3>
-          <p class="mb-0">提供課程滿意度及回饋<br>讓我們持續成長與進步</p>
+          <h3 class="fw-bold mb-3 section3-h3">敬請期待</h3>
+          <p class="mb-0">我正在努力開發新功能<br>歡迎隨時回來看看</p>
         </div>
       </li>
     </ul>
@@ -116,27 +158,23 @@ current: index
 <section class="bg-dark">
   <div class="container py-6 py-md-max">
     <h2 class="text-center fw-bold pb-3">
-      你想要學習的程式，都在這裡
+      你知道地球的宇宙地址嗎!
     </h2>
     <div class="swiper Swiper1">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">JavaScript</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">HTML/CSS</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white  border-white swiper-slide">SQL</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">Java</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white  border-white swiper-slide">SQL</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">本宇宙</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white  border-white swiper-slide">拉尼亞凱亞</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">超星系團</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">室女座</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">星系團</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white  border-white swiper-slide">本星系群</a></div>
         <div class="swiper-slide">
-          <a href="#" class="btn btn-outline-white  border-white swiper-slide">Bash/Shell</a>
+          <a href="#" class="btn btn-outline-white  border-white swiper-slide">銀河系</a>
         </div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">Python</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">PHP</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">C++</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">C#</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">Visual Basic</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">MATLAB</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">Ruby</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">Perl</a></div>
-        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">Swift</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">獵戶臂</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">太陽系</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">第三行星</a></div>
+        <div class="swiper-slide"><a href="#" class="btn btn-outline-white border-white swiper-slide">地球</a></div>
       </ul>
     </div>
   </div>
@@ -149,193 +187,114 @@ current: index
 
 <section class="container py-6 py-md-max">
   <h2 class="text-center mb-lg position-relative">
-    熱門推薦課程
+    地球的鄰居們
   </h2>
   <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-6 list-unstyled  avator-list">
-    <li class="col avator-card py-5 d-flex flex-column justify-content-between " data-aos="flip-left" data-aos-delay="150">
-      <div class="card-header text-center mb-2 border-bottom-0 ">
-        <img src="./assets/images/teacher01.jpg" alt="photo" class="avator mb-2">
-        <p class="mb-0 ">Belinda</p>
-      </div>
-      <div class="card-body px-4 d-flex flex-column mb-4 py-2 justify-content-between">
-          <h3 class="card-title fs-4 fw-bold ">
-            基礎前端 - HTML
-          </h3>
-        <div class="mt-auto">
-          <span class="text-primary">
-            前端語言
-          </span>
-          <p class="card-text">
-            帶領無基礎的平民老百姓，從最基礎的HTML語法出發，使用最淺顯易懂的語言與生活隨處可見的例子...
-          </p>
-        </div>
-      </div>
-      <div class="card-footer text-center border-top border-light">
-        <p class="mb-0">50分鐘<span class="fs-2 ms-2 font-monospace">NT$1600</span></p>
-      </div>
-    </li>
-    <li class="col avator-card py-5 d-flex flex-column justify-content-between" data-aos="flip-left" data-aos-delay="200">
-      <div class="card-header text-center mb-2 border-bottom-0 ">
-        <img src="./assets/images/teacher02.jpg" alt="photo" class="avator mb-2">
-        <p class="mb-0">Guava</p>
-      </div>
-      <div class="card-body px-4 d-flex flex-column mb-4 py-2 justify-content-between">
-          <h3 class="card-title fs-4 fw-bold mb-2">
-            2022 Python 全攻略｜從入門到實務
-          </h3>
-        <div class="mt-auto">
-          <span class="text-primary mb-2">
-            後端語言
-          </span>
-          <p class="card-text">
-            Python支援多種程式設計範式，包括函數式、指令式、反射式、結構化和物件導向程式設計，它擁有動態...
-          </p>
-        </div>
-      </div>
-      <div class="card-footer text-center border-top border-light">
-        <p class="mb-0">50分鐘<span class="fs-2 ms-2 font-monospace">NT$2200</span></p>
-      </div>
-    </li>
     <li class="col avator-card py-5 d-flex flex-column justify-content-between" data-aos="flip-left" data-aos-delay="250">
       <div class="card-header text-center mb-2 border-bottom-0 ">
-        <img src="./assets/images/teacher03.jpg" alt="photo" class="avator mb-2">
-        <p class="mb-0">Joe</p>
+        <img src="./assets/images/water-star-re.png" alt="photo" class="avator mb-2">
+        <p class="mb-0">Mercury</p>
       </div>
       <div class="card-body px-4 d-flex flex-column mb-4 py-2 justify-content-between">
         <div class="mb-2">
           <h3 class="card-title fs-4 fw-bold">
-            活用 Line Bot ｜APP 開發到上架完整實戰攻略
+            水星
           </h3>
         </div>
         <div class="mt-auto">
           <span class="text-primary mb-2">
-            行動應用開發
+            距離太陽最近的行星
           </span>
           <p class="card-text">
-            Line Bot可用於實用的目的，如客戶服務或資訊獲取，有些聊天機器人會搭載自然語言處理系統，但大多簡...
+            水星是太陽系八大行星之一，位於太陽系內側。水星的表面類似月球，充滿了撞擊坑和山脈。水星的自轉週期很長...
           </p>
         </div>
       </div>
       <div class="card-footer text-center border-top border-light">
-        <p class="mb-0">50分鐘<span class="fs-2 ms-2 font-monospace">NT$1100</span></p>
+        <p class="mb-0">離太陽平均<span class="fs-2 ms-2 font-monospace">0.38AU</span></p>
       </div>
     </li>
     <li class="col avator-card py-5 d-flex flex-column justify-content-between" data-aos="flip-left" data-aos-delay="300">
       <div class="card-header text-center mb-2 border-bottom-0 ">
-        <img src="./assets/images/teacher04.jpg" alt="photo" class="avator mb-2">
-        <p class="mb-0">Lina</p>
+        <img src="./assets/images/gold-star-re.png" alt="photo" class="avator mb-2">
+        <p class="mb-0">Venus</p>
       </div>
       <div class="card-body px-4 d-flex flex-column mb-4 py-2 justify-content-between">
         <div class="mb-2">
           <h3 class="card-title fs-4 fw-bold">
-            Linux 零基礎七天入門｜入門到實務
+            金星
           </h3>
         </div>
         <div class="mt-auto">
           <span class="text-primary mb-2">
-            作業系統與伺服器
+            太陽系最熱行星
           </span>
           <p class="card-text">
-            Linux是一種自由和開放原始碼的類UNIX作業系統，作業系統中包含了許多使用者圖形介面和其他實用...
+            金星是太陽系中最接近地球的行星，其大小和質量與地球相近。它的表面被稱為「熱力學烤爐」，因為其表面溫度高達470°C...
           </p>
         </div>
       </div>
       <div class="card-footer text-center border-top border-light">
-        <p class="mb-0">50分鐘<span class="fs-2 ms-2 font-monospace">NT$1100</span></p>
+        <p class="mb-0">離太陽平均<span class="fs-2 ms-2 font-monospace">0.72AU</span></p>
       </div>
     </li>
+    <li class="col avator-card py-5 d-flex flex-column justify-content-between" data-aos="flip-left" data-aos-delay="200">
+      <div class="card-header text-center mb-2 border-bottom-0 ">
+        <img src="./assets/images/mars -re.png" alt="photo" class="avator mb-2">
+        <p class="mb-0">Mars</p>
+      </div>
+      <div class="card-body px-4 d-flex flex-column mb-4 py-2 justify-content-between">
+          <h3 class="card-title fs-4 fw-bold mb-2">
+            火星
+          </h3>
+        <div class="mt-auto">
+          <span class="text-primary mb-2">
+            Elon Musk的最愛
+          </span>
+          <p class="card-text">
+            火星是太陽系中距離地球第四近的行星，以羅馬神話中的戰神為名。火星表面充滿了大量的撞擊坑、山脈和峽谷...
+          </p>
+        </div>
+      </div>
+      <div class="card-footer text-center border-top border-light">
+        <p class="mb-0">離太陽平均<span class="fs-2 ms-2 font-monospace">1.52AU</span></p>
+      </div>
+    </li>
+    <li class="col avator-card py-5 d-flex flex-column justify-content-between " data-aos="flip-left" data-aos-delay="150">
+      <div class="card-header text-center mb-2 border-bottom-0 ">
+        <img src="./assets/images/Jupiter-re.png" alt="photo" class="avator mb-2">
+        <p class="mb-0 ">Jupiter</p>
+      </div>
+      <div class="card-body px-4 d-flex flex-column mb-4 py-2 justify-content-between">
+          <h3 class="card-title fs-4 fw-bold ">
+            木星
+          </h3>
+        <div class="mt-auto">
+          <span class="text-primary">
+            太陽系體積最大行星
+          </span>
+          <p class="card-text">
+            木星是太陽系中最大的行星，其直徑是地球的11倍。它被稱為「氣態巨行星」，因為它的表面主要由氫和氦組成...
+          </p>
+        </div>
+      </div>
+      <div class="card-footer text-center border-top border-light">
+        <p class="mb-0">離太陽平均<span class="fs-2 ms-2 font-monospace">5.20AU</span></p>
+      </div>
+    </li>
+    
+    
   </ul>
   <div class="d-flex justify-content-center">
-    <a href="course-list.html" class="btn btn-gradient-index px-3 py-2 px-md-5 border-0">所有課程</a>
+    <a href="./planetIntro.html" class="btn btn-gradient-index px-3 py-2 px-md-5 border-0">行星介紹</a>
   </div>
 </section>
 
 
-<section>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 text-center text-md-start g-0 ">
-    <div class="col info info info-1 d-flex justify-content-center align-items-center">
-      <div class="fw-bold ">
-        <span class="material-symbols-outlined fs-2 mb-3 ">
-          forum
-        </span>
-        <h3 class="mb-6 position-relative resolve-deco fw-bold">對症下藥，專案製作</h3>
-        <p class="mb-0">除了可以瘋狂提問之外<br>還有機會一起完成專案</p>
-      </div>
-    </div>
-    <div class="col info info info-2 d-flex justify-content-center align-items-center">
-      <div class="fw-bold px-3">
-          <span class="material-symbols-outlined fs-2 mb-3">
-          tips_and_updates
-          </span>
-          <h3 class="mb-6 position-relative resolve-deco fw-bold">激發你的學習潛力</h3>
-          <p class="mb-0">進度制課程安排&個人化學習建議 有效管理你的學習動力</p>
-      </div>
-    </div>
-    <div class="col info info info-3 d-flex justify-content-center align-items-center">
-      <div class="fw-bold px-3">
-          <span class="material-symbols-outlined fs-2 mb-3">
-            thumb_up
-          </span>
-          <h3 class="mb-6 position-relative resolve-deco fw-bold">學習效率</h3>
-          <p class="mb-0">針對學員狀況調整內容與步調 學習精準最有效</p>
-      </div>
-    </div>
-    <div class="col info info info-4 d-flex justify-content-center align-items-center">
-      <div class="fw-bold px-3">
-          <span class="material-symbols-outlined fs-2 mb-3">
-            group
-          </span>
-          <h3 class="mb-6 position-relative resolve-deco fw-bold">一對一指導</h3>
-          <p class="mb-0">針對目的進行客製化課程安排 快速的學以致用</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-
-<section class="bg-dark ">
-  <div class="container py-6 py-md-max">
-    <h2 class="h3 text-center mb-lg position-relative h2-title">文章分享</h2>
-    <ul class="row row-cols-1 row-cols-lg-3 g-4 list-unstyled share-list">
-      <li class="col p-md-2 p-lg-5 card position-relative bg-dark no-border share-item">
-        <div class="square-rounded square-rounded-top-left position-absolute top-0 start-0"></div>
-        <div class="square-rounded square-rounded-top-right position-absolute top-0 end-0"></div>
-        <div class="square-rounded square-rounded-bottom-left position-absolute bottom-0 start-0"></div>
-        <div class="square-rounded square-rounded-bottom-right position-absolute bottom-0 end-0"></div>
-        <div class="bg-dark">
-          <img src="assets/images/article01.jpg" alt="picture" class="img-fluid mb-3">
-          <h3 class="h5 mb-3">2022 前端開發者學習地圖</h3>
-          <p class="mb-3">轉職為前端的這條職業路上該如何發展？本篇為前端開發者提供學習地圖參考</p>
-          <a href="#" class="fs-5 text-primary d-block text-end  stretched-link">MORE</a>
-        </div>
-      </li>
-      <li class="col p-md-2 p-lg-5 card position-relative bg-dark no-border share-item">
-        <div class="square-rounded square-rounded-top-left position-absolute top-0 start-0"></div>
-        <div class="square-rounded square-rounded-top-right position-absolute top-0 end-0"></div>
-        <div class="square-rounded square-rounded-bottom-left position-absolute bottom-0 start-0"></div>
-        <div class="square-rounded square-rounded-bottom-right position-absolute bottom-0 end-0"></div>
-        <img src="assets/images/article02.jpg" alt="picture" class="img-fluid mb-3">
-        <h3 class="h5 mb-3">軟體工程師有哪些類別</h3>
-        <p class="mb-3">軟體工程師領域廣闊，許多人仍然對此相關職務感到陌生，本篇就介紹主流的軟體工程師職務</p>
-        <a href="#" class="fs-5 text-primary d-block text-end  stretched-link">MORE</a>
-      </li>
-      <li class="col p-md-2 p-lg-5 card position-relative bg-dark no-border share-item">
-        <div class="square-rounded square-rounded-top-left position-absolute top-0 start-0"></div>
-        <div class="square-rounded square-rounded-top-right position-absolute top-0 end-0"></div>
-        <div class="square-rounded square-rounded-bottom-left position-absolute bottom-0 start-0"></div>
-        <div class="square-rounded square-rounded-bottom-right position-absolute bottom-0 end-0"></div>
-        <img src="assets/images/article03.jpg" alt="picture" class="img-fluid mb-3">
-        <h3 class="h5 mb-3">免費 25 小時前端教學資源</h3>
-        <p class="mb-3">這篇文章規劃了適合「前端工程師」的學習地圖，讓新進的學生了解如何選擇課程</p>
-        <a href="#" class="fs-5 text-primary d-block text-end  stretched-link">MORE</a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section class="share-bg">
+<section class="bg-dark1">
   <div class="container py-6 py-md-max" data-aos="fade-down" data-aos-delay="200">
-    <h2 class="h3 text-center mb-lg position-relative h2-title">專屬你的學習課程<br>超過 3000 位學員得到了程式超能力</h2>
+    <h2 class="h3 text-center mb-lg position-relative h2-title">高畫質天文照<br>隨便一張都能當桌布</h2>
     <div class="row justify-content-center">
       <div class="col-lg-9">
         <div class="swiper Swiper2 position-relative">
@@ -343,52 +302,44 @@ current: index
             <div class="swiper-slide">
               <div class="d-lg-flex align-items-end">
                 <div class="swiper-img mb-lg">
-                  <img src="assets/images/share01.jpg" alt="picture" class="img-fluid rounded-3">
+                  <img src="./assets/images/sun bg1.jpg" alt="picture" class="img-fluid rounded-3">
                 </div>
-                <div class="bg-white feedback text-dark p-4 position-relative mb-lg mb-lg-0">
-                  <img src="assets/images/student01.jpg" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
+                <div class="bg-sun feedback text-dark p-4 position-relative mb-lg mb-lg-0 swiper-img">
+                  <img src="./assets/images/sun re.png" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
                   <br>
-                  <h3 class="mb-2 fs-5 fw-bold">老師很有耐心</h3>
-                  <p class="mb-0">超級喜歡~</p>
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="d-lg-flex align-items-end">
                 <div class="swiper-img mb-lg">
-                  <img src="assets/images/share02.jpg" alt="picture" class="img-fluid rounded-3">
+                  <img src="/assets/images/Mercury bg1.jpg" alt="picture" class="img-fluid rounded-3">
                 </div>
-                <div class="bg-white feedback text-dark p-4 position-relative mb-lg mb-lg-0">
-                  <img src="assets/images/student02.jpg" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
+                <div class="bg-mer feedback text-dark p-4 position-relative mb-lg mb-lg-0 swiper-img">
+                  <img src="./assets/images/Mercury-re.jpg.png" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
                   <br>
-                  <h3 class="mb-2 fs-5 fw-bold">老師很有耐心</h3>
-                  <p class="mb-0">老師手把手的細心教學，用手繪圖，以淺顯易懂的方式，讓零網頁基礎的我也能快速了解網頁的架構與原理，學網頁變得有趣多了！</p>
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="d-lg-flex align-items-end">
                 <div class="swiper-img mb-lg">
-                  <img src="assets/images/share03.jpg" alt="picture" class="img-fluid rounded-3">
+                  <img src="./assets/images/neptune-bg1.jpg" alt="picture" class="img-fluid rounded-3">
                 </div>
-                <div class="bg-white feedback text-dark p-4 position-relative mb-lg mb-lg-0">
-                  <img src="assets/images/student03.jpg" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
+                <div class="bg-nep feedback text-dark p-4 position-relative mb-lg mb-lg-0 swiper-img">
+                  <img src="./assets/images/Neptune 1.jpg.png" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
                   <br>
-                  <h3 class="mb-2 fs-5 fw-bold">老師很有耐心</h3>
-                  <p class="mb-0">以淺顯易懂的方式，讓零網頁基礎的我也能快速了解網頁的架構與原理，學網頁變得有趣多了！</p>
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="d-lg-flex align-items-end">
                 <div class="swiper-img mb-lg">
-                  <img src="assets/images/share04.jpg" alt="picture" class="img-fluid rounded-3">
+                  <img src="/assets/images/Jupiter bg1.jpg" alt="picture" class="img-fluid rounded-3">
                 </div>
-                <div class="bg-white feedback text-dark p-4 position-relative mb-lg mb-lg-0">
-                  <img src="assets/images/student04.jpg" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
+                <div class="bg-jup feedback text-dark p-4 position-relative mb-lg mb-lg-0 swiper-img">
+                  <img src="/assets/images/Jupiter-re.png" alt="photo" class="avator position-absolute top-0 end-0 translate-middle">
                   <br>
-                  <h3 class="mb-2 fs-5 fw-bold">老師很有耐心</h3>
-                  <p class="mb-0">老師手把手的細心教學，用手繪圖，以淺顯易懂的方式，讓零網頁基礎的我也能快速了解網頁的架構與原理，學網頁變得有趣多了！</p>
                 </div>
               </div>
             </div>
@@ -420,10 +371,10 @@ current: index
             menu_book
           </span>
           <div class="mb-4 mb-lg-0">
-            <h4 class="mb-4 mb-lg-0 h3">加入我們成為導師</h4>
-            <p>歡迎各大程式大神加入我們，用知識在世界留下一點影響力。</p>
+            <h4 class="mb-4 mb-lg-0 h3">給我們一些改進建議吧</h4>
+            <p>歡迎透過表單來向我們反映您寶貴的意見，我們將持續致力於優化使用者體驗。</p>
           </div>
-          <a href="sign-up.html" class="btn btn-outline-white border-white ">立即預約</a>
+          <a href="/feedBack.html" class="btn btn-outline-white border-white ">網站反饋表單</a>
         </div>
       </div>
     </div>
@@ -455,3 +406,56 @@ current: index
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   });
 </script>
+
+<footer class="p-md-4 p-3 bg-dark text-center footer font-monospace">
+  <p class="mb-0 text-light">Space Loves © 2022 All Rights Reserved</p>
+</footer>
+
+    
+    <script src="assets/js/vendors.js"></script>
+    <script src="assets/js/all.js"></script>
+
+
+<script>
+  var swiper1 = new Swiper(".Swiper1", {
+  autoplay: {
+    delay: 1000,
+    disableOnInteraction: true,
+    reverseDirection: false,
+  },
+  speed: 1500,
+  loop: true,
+  spaceBetween: 16,
+  slidesPerView: 3,
+  //多欄
+  breakpoints: {
+    768: {
+      slidesPerView: 6,
+    },
+    992: {
+      slidesPerView: 9,
+    },
+  },
+});
+
+var swiper2 = new Swiper(".Swiper2", {
+  cssMode: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  mousewheel: true,
+  keyboard: true,
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>

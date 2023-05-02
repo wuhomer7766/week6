@@ -2,10 +2,11 @@
   max-width: 100%;
 }
 .banner{
-  background-image: url(https://wuhomer7766.github.io/week6/assets/images/bg_home.jpg);
+  background-image: url('https://images.pexels.com/photos/2706654/pexels-photo-2706654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   height: 100vh;
   max-width: 100%;
   background-size:cover; //點點點點點點點點點點點點點點點點點點點點點
+  background-repeat:no-repeat;
 }
 
 .top-left-dot{
@@ -227,7 +228,7 @@
 }
 .swiper-img{
     height: 381px;
-    width: 525px;
+    width: 54%;
     margin-left: 10px;
     position: relative;
     img{
@@ -249,6 +250,34 @@
 }
 
 
+.bg-sun{
+  width: 416px;
+  height: 262px;
+  background: url('/assets/images/sun\ bg222.png');
+  object-fit: cover;
+};
+
+.bg-mer{
+  width: 416px;
+  height: 262px;
+  background: url('/assets/images/Mercury\ bg2.jpg.png');
+  object-fit: cover;
+};
+
+
+.bg-jup {
+  width: 416px;
+  height: 262px;
+  background: url('/assets/images/Jupiter\ bg\ 2.jpg.png');
+  object-fit: cover;
+}
+
+.bg-nep {
+  width: 416px;
+  height: 262px;
+  background: url('/assets/images/neptune-bg2.jpg.png');
+  object-fit: cover;
+}
 
 .pagination{
    position:absolute;

@@ -14,9 +14,6 @@
   }
 }
 
-.card-course-height{
-  max-height: 269px;
-}
 
 @media (max-width:767px) {
   .category-item{
@@ -28,20 +25,18 @@
   }
 }
 
-.mtmb{
-  margin-top: 90px;
-  margin-bottom: 50px;
+.starRounded {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
-
-
-
-
 
 .btn-gradient-list{
   background: linear-gradient(180deg, #09ACF5, #62DB54);
   width: 168px;;
 }
 
-.btn-light{
-  width: 168px;
+
+.he-500 {
+  height: 500px;
 }
