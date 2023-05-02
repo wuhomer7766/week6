@@ -13,18 +13,17 @@
     margin-top: 5px;
     white-space: nowrap; } }
 
-.card-course-height {
-  max-height: 269px; }
-
 @media (max-width: 767px) {
   .category-item {
     display: none; }
   .card-course-height {
     margin-bottom: 380px; } }
 
-.mtmb {
-  margin-top: 90px;
-  margin-bottom: 50px; }
+.starRounded {
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover; }
 
 .btn-gradient-list {
   background: -webkit-gradient(linear, left top, left bottom, from(#09ACF5), to(#62DB54));
@@ -32,7 +31,7 @@
   background: linear-gradient(180deg, #09ACF5, #62DB54);
   width: 168px; }
 
-.btn-light {
-  width: 168px; }
+.he-500 {
+  height: 500px; }
 
 /*# sourceMappingURL=course-list.css.map */

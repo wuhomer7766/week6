@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    Coding Home 程式家教
+  </title>
+  <link rel="shortcut icon" href="assets/images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/layout/layout.scss">
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js" integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container py-2">
+    <div>
+      <a class="navbar-brand" href="./index.html">
+        <img src="/assets/images/coding home-re.png" alt="" width="174" height="42">
+      </a>
+    </div>
+    <ul class="navbar-btn-list list-unstyled ms-auto my-2 my-lg-0 mb-lg-0 d-flex">
+      <li class="navbar-btn-item mx-3">
+        <a href="./index.html" class="text-white text-decoration-none me-lg-6 p-md-1">首頁</a>
+      </li>
+      <li class="navbar-btn-item mx-4">
+        <a href="./findPhoto.html" class="text-white text-decoration-none me-lg-6 p-md-1">太空圖片庫</a>
+      </li>
+      <li class="navbar-btn-item">
+        <a href="./planetIntro.html" class="text-white text-decoration-none me-lg-6 p-md-1">行星介紹</a>
+      </li>
+      <li class="navbar-btn-item">
+        <a href="./feedBack.html" class="text-white text-decoration-none me-lg-6 p-md-1">提供建議</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+  
+
+
+
+<section class="bg-dark2">
+  <div class="container mt-3">
+    <h2 class="text-center fw-bold pb-3">
+      開始尋找你喜愛的星星
+    </h2>
+    <div id="app" class="bg-dark2"></div>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/react-hook-form@7.33.1/dist/index.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
+<script type="text/babel">
+  // unsplash API: https://unsplash.com/developers
+  // 請使用自行申請的 API 來進行運作
+  const { useState, useEffect, useRef } = React;
+  const api = 'https://api.unsplash.com/search/photos/';
+  const accessKey = 'GAvxZ9VesndxTx_9NftqgOtZffnTB0YhfGiWGDJA-bs';
+
+  const Loading = ({isLoading}) => {
+    return (<div className="loading" style={{ display: isLoading ? 'flex' : 'none' }}>
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>)
+  }
+  
+  const SearchBox = ({onSearchEnterHandler, filterString}) => {
+    return <div className="w-50 py-3 d-flex justify-content-center">
+      <input type="text" id="filter" className="form-control"
+        defaultValue={filterString}
+        onKeyPress={onSearchEnterHandler}
+      />
+    </div>
+  }
+
+  const Card = ({item, getSinglePhoto}) => {
+    return <a className="card" href="#" onClick={(e) => {
+      e.preventDefault();
+      getSinglePhoto(item.id)
+    }}>
+      <img className="card-img img-cover" width="100%" height="300"
+      src={`${item.urls.raw}&w=600&q=80`} alt="" />
+    </a>
+  }
+    
+  // #1 剩餘次數
+  // #2 讀取效果
+  // #3 展開的 Modal
+
+  const App = () => {
+    const [jsonData, setJsonData] = useState([]);
+    const [remaining, setRemaining] = useState(0);
+    const [filterString, setFilterString] = useState('space');
+    const [photoUrl, setPhotoUrl] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const currentPage = useRef(1)
+    const listRef = useRef(null);
+    const modalRef = useRef(null)
+    const myModal = useRef(null);
+
+    const onSearchEnter = (e) => {
+      console.log(e);
+      if (e.key === 'Enter') {
+        setFilterString(e.target.value);
+      }
+    }
+    const getSinglePhoto = (id) => {
+      (async () => {
+        const api = 'https://api.unsplash.com/photos/'
+        const result = await axios(`${api}${id}?client_id=${accessKey}`);
+        setPhotoUrl(result.data.urls.regular)
+        console.log(result, photoUrl);
+        // 打開 Modal
+        myModal.current.show();
+      })();
+    };
+
+    const getPhotos = async (page = 1, isNew = true) => {
+      try {
+          // 搜尋特定需要加入 query
+          // isLoading.current = true;
+          setIsLoading(true);
+          const result = await axios.get(`${api}?client_id=${accessKey}&query=${filterString}&page=${page}`);
+          console.log(result);
+          setJsonData((preData) => {
+            console.log('更新資料觸發');
+            if (isNew) {
+              return [...result.data.results];
+            }
+            return [...preData, ...result.data.results];
+          });
+          currentPage.current = page; // 每次都需要確認當前頁
+          setRemaining(result.headers['x-ratelimit-remaining']);
+          setTimeout(() => {
+            // isLoading.current = false;
+            setIsLoading(false);
+          }, 500);
+        } catch (error) {
+          console.log(error);
+        }
+    }
+
+    useEffect(() => {
+      getPhotos(1, true);
+
+      // #這樣才能觸發新的事件
+      const scrollEvent = (evt) => {
+        const height = (listRef.current.offsetHeight + listRef.current.offsetTop) - window.innerHeight;
+        if (!isLoading && window.scrollY > height) {
+          currentPage.current++;
+          getPhotos(currentPage.current, false);
+        }
+      }
+      window.addEventListener('scroll', scrollEvent);
+      return () => window.removeEventListener('scroll', scrollEvent);
+    }, [filterString]);
+
+    useEffect(() => {
+      myModal.current = new bootstrap.Modal(modalRef.current);
+    }, [])
+
+    useEffect(() => {
+      const body = document.querySelector('body');
+      if (isLoading) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = 'auto';
+      }
+    }, [isLoading]);
+
+    return (
+      <div className="">
+        <Loading isLoading={isLoading} />
+        <SearchBox onSearchEnterHandler={onSearchEnter} filterString={filterString}></SearchBox>
+        <p className="d-inline-block">請輸入關鍵字  (剩餘請求次數：{remaining})</p>
+        <div className='row row-cols-4 g-3' ref={listRef}>
+          { jsonData.map((item) => 
+            <div className="col" key={item.id}>
+              <Card item={item} getSinglePhoto={getSinglePhoto} />
+            </div>
+          )}
+        </div>
+        <div className="modal fade" tabIndex="-1" ref={modalRef}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <img src={photoUrl} alt="" width="100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  ReactDOM.createRoot(document.querySelector('#app')).render(<App />);
+</script>
+
+<style>
+.img-cover {
+  object-fit: cover;
+}
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+
+
+<footer class="p-md-4 p-3 bg-dark text-center footer font-monospace">
+  <p class="mb-0 text-light">Space Loves © 2022 All Rights Reserved</p>
+</footer>
+
+    
+    <script src="assets/js/vendors.js"></script>
+    <script src="assets/js/all.js"></script>
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">  
+</body>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    Coding Home 程式家教
+  </title>
+  <link rel="shortcut icon" href="assets/images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/layout/layout.scss">
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js" integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container py-2">
+    <div>
+      <a class="navbar-brand" href="./index.html">
+        <img src="/assets/images/coding home-re.png" alt="" width="174" height="42">
+      </a>
+    </div>
+    <ul class="navbar-btn-list list-unstyled ms-auto my-2 my-lg-0 mb-lg-0 d-flex">
+      <li class="navbar-btn-item mx-3">
+        <a href="./index.html" class="text-white text-decoration-none me-lg-6 p-md-1">首頁</a>
+      </li>
+      <li class="navbar-btn-item mx-4">
+        <a href="./findPhoto.html" class="text-white text-decoration-none me-lg-6 p-md-1">太空圖片庫</a>
+      </li>
+      <li class="navbar-btn-item">
+        <a href="./planetIntro.html" class="text-white text-decoration-none me-lg-6 p-md-1">行星介紹</a>
+      </li>
+      <li class="navbar-btn-item">
+        <a href="./feedBack.html" class="text-white text-decoration-none me-lg-6 p-md-1">提供建議</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+  
+
+<!--時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會時間軸 不會-->
+
+
+<section class="bg-dark2 py-md-max">
+  <div class="container mt-3 ">
+    <h2 class="text-center fw-bold pb-3">
+      歡迎填寫您對本網站的建議
+    </h2>
+    <div class=" d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-body bg-dark1 p-4" >
+          <div id="app" class="bg-dark1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/react-hook-form@7.33.1/dist/index.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+<script type="text/babel">
+  const { useState, useEffect } = React;
+  const { useForm, useWatch } = ReactHookForm;
+
+  const CheckboxRadio = ({id, labelText, register, type, errors, rules, value, name}) => {
+    return (<>
+      <div className='form-check'>
+        <input
+          className={`form-check-input ${errors[name] && 'is-invalid'}`}
+          type={type}
+          name={name}
+          id={id}
+          value={value}
+          {...register(name, rules)}
+        />
+        {/* Radio 使用 Name 欄位 */}
+        <label className='form-check-label' htmlFor={id}>
+          {labelText}
+        </label>
+        {errors[name] && (
+          <div className='invalid-feedback'>{errors[name]?.message}</div>
+        )}
+      </div>
+    </>)
+  }
+  const Input = ({ id, labelText, register, type, errors, rules }) => {
+    return (
+      <>
+        <label htmlFor={id} className='form-label'>
+          {labelText}
+        </label>
+        <input
+          id={id}
+          type={type}
+          className={`form-control ${errors[id] && 'is-invalid'}`}
+          {...register(id, rules)}
+        />
+        {errors[id] && (
+          <div className='invalid-feedback'>{errors[id]?.message}</div>
+        )}
+      </>
+    );
+  };
+  const Select = ({ id, labelText, register, errors, rules, children, disabled = false }) => {
+    return (
+      <>
+        <label htmlFor={id} className='form-label'>
+          {labelText}
+        </label>
+        <select
+          id={id}
+          className={`form-select ${errors[id] && 'is-invalid'}`}
+          {...register(id, rules)}
+          disabled={disabled}
+        >
+          { children }
+        </select>
+        {errors[id] && (
+          <div className='invalid-feedback'>{errors[id]?.message}</div>
+        )}
+      </>
+    )
+  }
+
+  const App = () => {
+    const {
+      register,
+      handleSubmit,
+      watch,
+      getValues,
+      control,
+      formState: { errors },
+    } = useForm({
+      mode: 'onTouched',
+    });
+
+    const onSubmit = (data) => {
+      console.log(errors);
+      console.log(data);
+    };
+
+    const [customData, setCustomData] = useState({});
+    const [addressData, setAddressData] = useState([]);
+
+    const watchForm = useWatch({
+      control,
+    });
+    useEffect(() => {
+      console.log(getValues()); // 可以使用 getValues 取得所有、特定值
+      console.log('errors', errors);
+      // 或是使用 setValues 寫入值
+    }, [watchForm]); // 將新變數傳入
+
+    // 取得地址資料
+    useEffect(() => {
+      (async () => {
+        const result = await axios.get('./assets/taiwan.json')
+        console.log(result.data);
+        setAddressData(result.data);
+      })();
+    }, [])
+
+    return (
+      <div >
+        <form action='' onSubmit={handleSubmit(onSubmit)}>
+          <div className='mb-3'>
+            <Input
+              id='username'
+              type='text'
+              errors={errors}
+              labelText='使用者名稱'
+              register={register}
+              rules={{
+                required: '使用者名稱為必填',
+                maxLength: {
+                  value: 10,
+                  message: '使用者名稱長度不超過 10',
+                },
+              }}
+            ></Input>
+          </div>
+          <div className='mb-3'>
+            <Input
+              id='email'
+              labelText='Email'
+              type='email'
+              errors={errors}
+              register={register}
+              rules={{
+                required: 'Email 為必填',
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: 'Email 格式不正確',
+                },
+              }}
+            ></Input>
+          </div>
+          <div className='row mb-3 g-3'>
+            <div className='col-6'>
+              <Select id='city'
+                labelText='對於本網站外觀的評分為'
+                errors={errors}
+                register={register}
+                rules={{
+                  required: '評分為必填'
+              }}>
+                <option disabled>請選出1-5的評分</option>
+                <option value="5" >5分</option>
+                <option value="4" >4分</option>
+                <option value="3" >3分</option>
+                <option value="2" >2分</option>
+                <option value="1" >1分</option>
+              </Select>
+            </div>
+            <div className='col-6'>
+              <Select id='district'
+                labelText='對於本網站功能的評分為'
+                errors={errors}
+                register={register}
+                rules={{
+                  required: '評分為必填'
+              }}>
+              <option disabled>請選出1-5的評分</option>
+                <option value="5" >5分</option>
+                <option value="4" >4分</option>
+                <option value="3" >3分</option>
+                <option value="2" >2分</option>
+                <option value="1" >1分</option>
+              </Select>
+            </div>
+          </div>
+          <div className='mb-3'>
+            <Input
+              id='address'
+              labelText='其他意見'
+              type='address'
+              errors={errors}
+              register={register}
+              rules={{
+                required: '意見為必填',
+              }}
+            ></Input>
+          </div>
+          <div className='mb-3'>
+            <CheckboxRadio
+              type='checkbox'
+              name='isCheckForm'
+              id='isCheckForm'
+              value={true}
+              register={register}
+              errors={errors}
+              rules={{ required: true }}
+              labelText="確認同意本網站的規範"
+            ></CheckboxRadio> 
+          </div>
+
+          <div className="d-flex justify-content-center">
+            <button type='submit' className='btn btn-primary'>
+              送出表單
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+  };
+
+  ReactDOM.createRoot(document.querySelector('#app')).render(<App />);
+</script>
+
+<footer class="p-md-4 p-3 bg-dark text-center footer font-monospace">
+  <p class="mb-0 text-light">Space Loves © 2022 All Rights Reserved</p>
+</footer>
+
+    
+    <script src="assets/js/vendors.js"></script>
+    <script src="assets/js/all.js"></script>
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">  
+</body>
