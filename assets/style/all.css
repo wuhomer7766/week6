@@ -10626,6 +10626,9 @@ textarea.form-control-lg {
   height: 10px;
   background-color: white; }
 
+.nav-nowrap {
+  white-space: nowrap; }
+
 .revervation-border {
   border: 1px solid #FFFFFF;
   border-radius: 12px; }
